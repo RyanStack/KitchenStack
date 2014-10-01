@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.header {
+  background-color: #303030 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+.title {
+  text-align: center;
+  text-shadow: 0px 3px 4px #cccccc;
+  color: #303030;
+}
+
+#formMine {
+  text-align: center;
+  position: relative;
+/* display: block; */
+/* height: 100%; */
+  padding-top: auto;
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+#formWrapper {
+  background: url("../images/blue.png");
+  width: 75%;
+  height: 50px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid #2a6496;
+  position: relative;
+  display: table;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+#appOutLine {
+  height: 80%;
+  width: 95%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.outline {
+  border: 1px solid #2a6496;
+  border-radius: 5px;
+}
+
+#topDivider {
+  width: 85%;
+  background-color: #2a6496;
+  height: .5px;
+  border: none;
+}
+
+#bottomDivider {
+  margin-top: 17%;
+  width: 85%;
+  background-color: #2a6496;
+  height: .5px;
+  border: none;
+}
+
+#myButton {
+  background: url("../images/blue.png");
+  border-radius: 5px;
+  border: 1px solid #2a6496;
+/* float: right; */
+/* margin-right: 8%; */
+  height: 50px;
+  width: 150px;
+  color: whitesmoke;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+.entry {
+  color: black;
+}
+
+.entry:hover {
+  background-color: grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+#searchResults {
+ background-color: white;
+ text-align: left;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ margin-top: .5px;
+ position: absolute;
+ width: 28%;
+}
+
+#ingredientContainer {
+  margin-left: 20%;
+}
+
+.checkBoxes {
+  display: inline;
+}
+
+#recipesSection {
+  width: 85%;
+  margin: auto;
+}
+
+.recipeIndividual {
+  margin: auto;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: inline-block;
+  width: 45%;
+  border: 1px solid rgba(196,201,204,0.95);
+  height: 350px;
+  margin-top: 2%;
+  box-shadow: 2px 2px 5px #ccc;
+  position: relative;
+  text-align: center;
+}
+
+.recipeIndividual:hover {
+  border: 1px solid #2a6496;
+}
+
+.imageRepeat {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  border: 1px solid black;
+}
+
+.spanRepeat {
+  margin-top: 1%;
+  font-weight: bold;
+  display: inline-block;
+
+}
+
+.ingredientsContainer {
+  display: inline-block;
+  background-color: grey;
+  width: 50%;
+  height: 50%;
+  margin-left: 27%;
+  position: relative;
+}
+
+.pR {
+  display: inline-block;
+}
+
+#ingredientHeader {
+  font-weight: bold;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+.ingredientRepeat {
+  display: block;
+  position: absolute;
+}
