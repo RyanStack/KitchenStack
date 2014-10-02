@@ -6,6 +6,8 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
     $scope.showIngredients = true;
     $scope.showRecipes = false;
     $scope.isAppOutline = true;
+    $scope.searchText;
+    $scope.hasSearched = false;
     $http.get('/data').then(function(result) {
         var words = result.data;
         var nofirst = words.substring(1);
@@ -31,8 +33,15 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
             $scope.showIngredients = false;
             $scope.showRecipes = true;
             $scope.isAppOutline = false;
+            $scope.hasSearched = true;
 
         });
+    };
+
+    $scope.adjustIngredients = function() {
+        $scope.showIngredients = true;
+        $scope.showRecipes = false;
+        $scope.hasSearched = false;
     };
 
     $scope.dropDown = function() {
@@ -41,6 +50,7 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
 
     $scope.addIngredient = function(ingredient) {
         $scope.added.push(ingredient);
+        $scope.searchText = "";
     };
 
 
