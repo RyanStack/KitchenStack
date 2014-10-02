@@ -23,12 +23,9 @@ body {
 #formMine {
   text-align: center;
   position: relative;
-/* display: block; */
-/* height: 100%; */
   padding-top: auto;
   display: table-cell;
   vertical-align: middle;
-
 }
 
 #formWrapper {
@@ -50,11 +47,6 @@ body {
   margin-top: 2%;
 }
 
-.outline {
-  border: 1px solid #2a6496;
-  border-radius: 5px;
-}
-
 #topDivider {
   width: 85%;
   background-color: #2a6496;
@@ -74,8 +66,6 @@ body {
   background: url("../images/blue.png");
   border-radius: 5px;
   border: 1px solid #2a6496;
-/* float: right; */
-/* margin-right: 8%; */
   height: 50px;
   width: 150px;
   color: whitesmoke;
@@ -95,13 +85,13 @@ body {
 }
 
 #searchResults {
- background-color: white;
- text-align: left;
- border: 1px solid #ccc;
- border-radius: 5px;
- margin-top: .5px;
- position: absolute;
- width: 28%;
+  background-color: white;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: .5px;
+  position: absolute;
+  width: 28%;
 }
 
 #ingredientContainer {
@@ -119,10 +109,11 @@ body {
 
 .recipeIndividual {
   margin: auto;
-  margin-left: 2%;
-  margin-right: 2%;
-  display: inline-block;
-  width: 45%;
+  margin-left: 6.67%;
+/* margin-right: 2%; */
+  display: inline-table;
+  width: 40%;
+  max-width: 40%;
   border: 1px solid rgba(196,201,204,0.95);
   height: 350px;
   margin-top: 2%;
@@ -137,39 +128,38 @@ body {
 
 .imageRepeat {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 5%;
   border: 1px solid black;
 }
 
-.spanRepeat {
-  margin-top: 1%;
+#extraNameOptions {
+/*  white-space: nowrap;*/
   font-weight: bold;
-  display: inline-block;
-
+  padding-top: 5%;
 }
 
 .ingredientsContainer {
   display: inline-block;
-  background-color: grey;
   width: 50%;
-  height: 50%;
   margin-left: 27%;
-  position: relative;
+  float: right;
+  margin-right: 12.5%;
 }
 
+
+/* what the hell is that below ?? haha .pR ??? hahah */
 .pR {
   display: inline-block;
 }
 
 #ingredientHeader {
   font-weight: bold;
-  width: 50%;
   margin-left: 25%;
   margin-top: 5%;
 }
 
 .ingredientRepeat {
-  display: block;
-  position: absolute;
+  display: inline;
+  color: #000;
 }
