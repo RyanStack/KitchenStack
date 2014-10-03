@@ -92,8 +92,13 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
       console.log($event.which)
     };
 
-    $scope.hoverInSearch = function() {
-        $scope.index = null;
+    // $scope.hoverInSearch = function() {
+    //     $scope.index = null;
+    // }
+
+    $scope.keepIndex = function(row) {
+        console.log(row)
+        $scope.index = row;
     }
 
 //---------------------------------------------------------------
