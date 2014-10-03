@@ -92,6 +92,10 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
       console.log($event.which)
     };
 
+    $scope.hoverInSearch = function() {
+        $scope.index = null;
+    }
+
 //---------------------------------------------------------------
 
     // This is what you will bind the filter to
