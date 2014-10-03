@@ -63,15 +63,24 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
         console.log('keypress', offset);
         if ($scope.index == null && offset == 1) {
             $scope.index = 0;
+            // $scope.searchText = $scope.filteredEntryLength[$scope.index]
         }
         else if ($scope.index == null && offset == -1) {
             $scope.index = 9;
+            // $scope.searchText = $scope.filteredEntryLength[$scope.index]
         }
         else {
             $scope.index = $scope.index + offset;
+            // $scope.searchText = $scope.filteredEntryLength[$scope.index]
             console.log($scope.filteredEntryLength.length)
-            if ($scope.index < 0) { $scope.index = $scope.filteredEntryLength.length }
-            if ($scope.index >= $scope.filteredEntryLength.length) { $scope.index = 0; }
+            if ($scope.index < 0) {
+                $scope.index = $scope.filteredEntryLength.length
+                // $scope.searchText = $scope.filteredEntryLength[$scope.index]
+            }
+            if ($scope.index >= $scope.filteredEntryLength.length) {
+                $scope.index = 0;
+                // $scope.searchText = $scope.filteredEntryLength[$scope.index]
+            }
             console.log($scope.index)
         }
     };
@@ -88,17 +97,24 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
       }
     };
 
-    $scope.onKeyPress = function ($event) {
-      console.log($event.which)
+    $scope.onKeyPress = function ($event, value) {
+        console.log(value)
+      if ($event.which == 13) {
+        var foodToAdd = $scope.filteredEntryLength[$scope.index]
+        $scope.addIngredient(foodToAdd)
+        $event.preventDefault();
+      }
     };
 
     // $scope.hoverInSearch = function() {
     //     $scope.index = null;
     // }
 
-    $scope.keepIndex = function(row) {
+    $scope.keepIndex = function(row, food) {
         console.log(row)
         $scope.index = row;
+        // $scope.searchText = food
+        // $scope.searchText = food;
     }
 
 //---------------------------------------------------------------
@@ -119,8 +135,20 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
             }
         }
 
+        // var lengthCheck = tempFilterText.length
+        // if (val.slice(0,lengthCheck) != tempFilterText) {
+        //     tempFilterText = tempFilterText
+        // }
+        // else if (val.length == undefined) {
+        //     tempFilterText = ""
+        // }
+        // else {
+        //     tempFilterText = val;
+        // }
 
         tempFilterText = val;
+        console.log(tempFilterText)
+
         filterTextTimeout = $timeout(function() {
             $scope.filterText = tempFilterText;
         }, 250); // delay 250 ms
