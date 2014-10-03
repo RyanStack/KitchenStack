@@ -10,7 +10,7 @@
 <body ng-controller="DisplayController" ng-click="dropDown()">
   <nav class="header" class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
-      <div class="navbar-header"> <a class="navbar-brand" href="#">Stack's Kitchen</a>
+      <div class="navbar-header"> <a class="navbar-brand" href="/">Stack's Kitchen</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href=>sign in</a>
@@ -25,7 +25,7 @@
     <div id="formWrapper">
       <form id="formMine" class="form-inline" role="form">
         <div class="form-group">
-          <input id="searchText" class="form-control" type="search" placeholder="live search..." ng-model="searchText" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)"
+          <input ng-show= "!hasSearched" id="searchText" class="form-control" type="search" placeholder="live search..." ng-model="searchText" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)"
           ng-keypress="onKeyPress($event, entry)" />
 
           <div ng-show="isSearching" id="searchResults" ng-mouseover="hoverInSearch()">
@@ -35,7 +35,7 @@
 
         </div>
         <button ng-show="!hasSearched" type="submit" class="btn btn-default" ng-click="submitIngredients()">Find Recipes Now</button>
-        <button ng-show="hasSearched" type="submit" class="btn btn-default" ng-click="adjustIngredients()">Adjust Ingredients</button>
+        <button ng-show="hasSearched" type="submit" class="btn btn-default" ng-click="adjustIngredients()">Alter Ingredients</button>
       </form>
     </div>
     <hr id="topDivider">
