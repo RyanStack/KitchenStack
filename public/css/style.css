@@ -163,3 +163,9 @@ body {
   display: inline;
   color: #000;
 }
+
+.highLight {
+  background-color: grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+}

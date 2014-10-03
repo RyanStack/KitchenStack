@@ -25,9 +25,9 @@
     <div id="formWrapper">
       <form id="formMine" class="form-inline" role="form">
         <div class="form-group">
-          <input id="searchText" class="form-control" type="search" placeholder="live search..." ng-model="searchText" />
+          <input id="searchText" class="form-control" type="search" placeholder="live search..." ng-model="searchText" ng-keydown="onKeyDown($event)" ng-keyup="onKeyUp($event)" ng-keypress="onKeyPress($event)" />
           <div ng-show="isSearching" id="searchResults">
-            <div class="entry" ng-click="addIngredient(entry)" ng-repeat="entry in entries | filter:filterText | limitTo:10"> <span>{{entry}}</span>
+            <div class="entry" ng-click="addIngredient(entry)" ng-repeat="entry in (filteredEntryLength = (entries | filter:filterText | limitTo:10))"> <span ng-class="$index == index ? 'highLight' : ''">{{entry}}</span>
             </div>
           </div>
         </div>
