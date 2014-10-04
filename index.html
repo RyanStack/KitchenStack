@@ -35,7 +35,7 @@
 
         </div>
         <a href ng-show="!hasSearched" type="submit" id="searchButton" ng-click="submitIngredients()">Find Recipes Now</a>
-        <button ng-show="hasSearched" type="submit" class="btn btn-default" ng-click="adjustIngredients()">Alter Ingredients</button>
+        <a href ng-show="hasSearched" type="submit" id="searchButton" ng-click="adjustIngredients()">Alter Ingredients</a>
       </form>
     </div>
     <hr id="topDivider">
