@@ -40,8 +40,8 @@
     </div>
     <hr id="topDivider">
     <div ng-show="showIngredients" id="ingredientContainer">
-      <p ng-repeat="item in added track by $index">
-        <input class="checkBoxes" type="checkbox" checked>{{item}}</p>
+      <p ng-repeat="item in keys track by $index">
+        <input class="checkBoxes" type="checkbox" ng-click="change(item)" checked>{{item}}</p>
     </div>
     <div id="recipesSection" ng-show="showRecipes">
       <div class="recipeIndividual" ng-repeat="(index, value) in recipes">

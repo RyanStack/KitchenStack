@@ -2,7 +2,9 @@ var App = angular.module('App', []);
 
 App.controller('DisplayController', function($scope, $http, $timeout) {
     $scope.index = null; // row index
-    $scope.added = [];
+    $scope.added = {};
+    $scope.keys = [];
+    $scope.finalSet = [];
     $scope.isSearching = false;
     $scope.showIngredients = true;
     $scope.showRecipes = false;
@@ -29,7 +31,13 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
 
     $scope.submitIngredients = function() {
         console.log($scope.added)
-        $http.get('/getRecipes', {params: { food: $scope.added }}).success(function(recipes) {
+        $scope.finalSet = [];
+        for (key in $scope.added) {
+            if ($scope.added[key] == true) {
+                $scope.finalSet.push(key)
+            }
+        }
+        $http.get('/getRecipes', {params: { food: $scope.finalSet }}).success(function(recipes) {
             console.log(recipes.matches)
             $scope.recipes = recipes.matches
             $scope.showIngredients = false;
@@ -51,9 +59,22 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
     }
 
     $scope.addIngredient = function(ingredient) {
-        $scope.added.push(ingredient);
+        $scope.added[ingredient] = true;
+        $scope.keys.push(ingredient)
         $scope.searchText = "";
+
     };
+
+    $scope.change = function(item) {
+        console.log("made it to change")
+        console.log(item)
+        for (keys in $scope.added ) {
+            if (keys == item) {
+                $scope.added[keys] = !($scope.added[keys]);
+                console.log($scope.added[keys])
+            }
+        }
+    }
 
 
 
