@@ -121,9 +121,15 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
     $scope.onKeyPress = function ($event, value) {
         console.log(value)
       if ($event.which == 13) {
+        console.log("checking index")
+        if ($scope.index == null) {
+           $event.preventDefault();
+        }
+        else {
         var foodToAdd = $scope.filteredEntryLength[$scope.index]
         $scope.addIngredient(foodToAdd)
         $event.preventDefault();
+        }
       }
     };
 
